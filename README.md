@@ -1,8 +1,9 @@
 # elm_django_examples
-contains basic examples of using elm with django server
+This Repo contains basic examples of using Elm generated Client Code with Django Server 
 
-Run django_project inside a virtual environment (follow these instructions to create a run a venv from your home)
-
+* Setting up a Virtual Environment
+This creates a virtual environment located at your
+*HOME* (you only need to do this once and you can put the venv wherever you want)
 - Create a venv at home with `python3 -m venv ~/django_env`
 - Activate the environment with `source ~/django_env/bin/activate`
 - Install *django* and *corsheaders* with 
@@ -10,9 +11,12 @@ Run django_project inside a virtual environment (follow these instructions to cr
   pip install Django
   pip install django-cors-headers
   ~~~~
+
+* Running Django Server
+- Make sure the virtual environment is activited
 - Run the server with (at port 8000)
   ~~~~
   cd elm_django_examples/django_project
   python manage.py runserver localhost:8000
   ~~~~
-- When your finished, deactivate the virtual environment with the command `deactivate`
+- When you're finished, deactivate the virtual environment with the command `deactivate`
