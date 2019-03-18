@@ -1,7 +1,7 @@
-# elm_django_examples
+# Elm Django Examples
 This Repo contains basic examples of using Elm generated Client Code with Django Server 
 
-* Setting up a Virtual Environment
+## Setting up a Virtual Environment
 
 This creates a virtual environment located at your
 *HOME* (you only need to do this once and you can put the venv wherever you want)
@@ -13,7 +13,7 @@ This creates a virtual environment located at your
   pip install django-cors-headers
   ~~~~
 
-* Running Django Server
+## Running Django Server
 
 - Make sure the virtual environment is activited
 - Run the server with (at port 8000)
