@@ -12,13 +12,13 @@ This creates a virtual environment located at your
   pip install Django
   pip install django-cors-headers
   ~~~~
+- When you're finished, deactivate the virtual environment with the command `deactivate`
 
 ## Running Django Server
 
-- Make sure the virtual environment is activited
+- Make sure the virtual environment is activated
 - Run the server with (at port 8000)
   ~~~~
   cd elm_django_examples/django_project
   python manage.py runserver localhost:8000
   ~~~~
-- When you're finished, deactivate the virtual environment with the command `deactivate`
