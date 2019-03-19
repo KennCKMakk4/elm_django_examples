@@ -1,8 +1,8 @@
-module GetPostExample exposing (Model, Msg(..), handleError, init, main, performGet, update, view)
+module GetPostExample exposing (main)
 
 import Browser
 import Html exposing (..)
-import Html.Events
+import Html.Events as Events
 import Http
 import String
 
@@ -12,11 +12,11 @@ import String
 
 
 rootUrl =
-    "http://localhost:8000/e/macid"
+    "http://localhost:8000/e/macid/"
 
 
 
--- rootUrl = "https://mac1xa3.ca/e/macid"
+-- rootUrl = "https://mac1xa3.ca/e/macid/"
 
 
 main =
@@ -75,12 +75,12 @@ view model =
     div []
         [ div []
             [ text model.get_response
-            , button [ Html.Events.onClick GetButton ] [ text "Perform Get" ]
+            , button [ Events.onClick GetButton ] [ text "Perform Get" ]
             ]
         , div
             []
             [ text model.post_response
-            , button [ Html.Events.onClick PostButton ] [ text "Perform Post" ]
+            , button [ Events.onClick PostButton ] [ text "Perform Post" ]
             ]
         , div [] [ text model.error_response ]
         ]
@@ -102,7 +102,7 @@ view model =
 performGet : Cmd Msg
 performGet =
     Http.get
-        { url = rootUrl ++ "/testreq/testget/?name=Name&age=Age"
+        { url = rootUrl ++ "testreq/testget/?name=Name&age=Age"
         , expect = Http.expectString GetResponse
         }
 
@@ -110,7 +110,7 @@ performGet =
 performPost : Cmd Msg
 performPost =
     Http.post
-        { url = rootUrl ++ "/testreq/testpost/"
+        { url = rootUrl ++ "testreq/testpost/"
         , body = Http.stringBody "application/x-www-form-urlencoded" "name=Name&age=Age"
         , expect = Http.expectString PostResponse
         }

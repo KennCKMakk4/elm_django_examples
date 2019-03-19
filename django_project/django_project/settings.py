@@ -34,6 +34,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 INSTALLED_APPS = [
     'testrequests.apps.TestrequestsConfig',
     'helloapp.apps.HelloappConfig',
+    'jsontest.apps.JsontestConfig',
     'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',

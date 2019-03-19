@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+# the following views are made to handle requests from GetPostExample.elm
+
 # handle a get request from
 #    localhost:<portnum>/e/macid/testget/?name=v1&age=v2
 def get_view(request):

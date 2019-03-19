@@ -1,0 +1,25 @@
+from django.http import JsonResponse
+
+# handle a request from
+#    localhost:<portnum>/e/macid/testjson/
+# takes a model from JsonExample.elm and returns one with the age inremented
+# works with Json in the request and response
+def json_view(request):
+    # HttpRequest.POST automatically parses JSON into a QueryDict object
+    reqDict = request.POST
+    name = reqDict.get("name","No one")
+    age  = int(reqDict.get("age","0"))
+    err  = reqDict.get("error","")
+
+    # the server can now examine and update the model
+    if name == "No one" and age == 0:
+        name = "Jimmy"
+        age  = 50
+
+    # JsonResponse automatically encodes a dictionary into a JSON response
+    respDict = {}
+    respDict['name'] = name
+    respDict['age'] = age
+    respDict['error'] = ""
+
+    return JsonResponse(respDict)

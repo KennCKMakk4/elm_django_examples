@@ -23,4 +23,5 @@ root = 'e/macid/' # TODO change me to your macid
 urlpatterns = [
     path(root + 'hello/', include('helloapp.urls')) ,
     path(root + 'testreq/', include('testrequests.urls')) ,
+    path(root + 'testjson/', include('jsontest.urls')) ,
 ]
