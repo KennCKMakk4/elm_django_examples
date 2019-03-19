@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-root = 'e/macid/'
+root = 'e/macid/' # TODO change me to your macid
 
 # this will send requests beginning with localhost:<portnum>/e/macid/
 # to fvarious apps to be handled
