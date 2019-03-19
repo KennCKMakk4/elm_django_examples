@@ -1,4 +1,5 @@
 from django.http import JsonResponse
+import json
 
 # handle a request from
 #    localhost:<portnum>/e/macid/testjson/
@@ -6,9 +7,9 @@ from django.http import JsonResponse
 # works with Json in the request and response
 def json_view(request):
     # HttpRequest.POST automatically parses JSON into a QueryDict object
-    reqDict = request.POST
+    reqDict = json.loads(request.body)
     name = reqDict.get("name","No one")
-    age  = int(reqDict.get("age","0"))
+    age  = reqDict.get("age",0)
     err  = reqDict.get("error","")
 
     # the server can now examine and update the model
@@ -19,7 +20,7 @@ def json_view(request):
     # JsonResponse automatically encodes a dictionary into a JSON response
     respDict = {}
     respDict['name'] = name
-    respDict['age'] = age
+    respDict['age'] = age+1
     respDict['error'] = ""
 
     return JsonResponse(respDict)
