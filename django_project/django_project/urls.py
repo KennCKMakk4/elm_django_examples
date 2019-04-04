@@ -26,4 +26,5 @@ urlpatterns = [
     path(root + 'testjson/', include('jsontest.urls')) ,
     path(root + 'testmodel/', include('modeltest.urls')) ,
     path(root + 'templateapp/', include('templateapp.urls')) ,
+    path(root + 'userauthapp/', include('userauthapp.urls')) ,
 ]

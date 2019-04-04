@@ -32,11 +32,6 @@ CORS_ORIGIN_ALLOW_ALL = True
 # Application definition
 
 INSTALLED_APPS = [
-    'templateapp.apps.TemplateappConfig',
-    'modeltest.apps.ModeltestConfig',
-    'testrequests.apps.TestrequestsConfig',
-    'helloapp.apps.HelloappConfig',
-    'jsontest.apps.JsontestConfig',
     'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,6 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'userauthapp.apps.UserauthappConfig',
+    'templateapp.apps.TemplateappConfig',
+    'modeltest.apps.ModeltestConfig',
+    'testrequests.apps.TestrequestsConfig',
+    'helloapp.apps.HelloappConfig',
+    'jsontest.apps.JsontestConfig',
 ]
 
 MIDDLEWARE = [
@@ -126,4 +127,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/e/macid/static/'
+STATICFILES_DIRS = [
+    "/home/macid/CS1XA3/public_html/",
+]
+STATIC_ROOT = "/home/macid/CS1XA3/django_project/static/"
